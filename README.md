@@ -1,2 +1,2 @@
 # etchASketch
-Etch-A-Sketch game using Javascript, HTML &amp; CSS.
+Etch-A-Sketch drawing pad using Javascript, HTML &amp; CSS.
