@@ -1,0 +1,19 @@
+#outerContainer {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#controlsContainer {
+	background: #b8b8b8;
+}
+
+#gridContainer {
+	background: white;
+	height: 400px;
+	width: 400px;
+	border: 1px solid black;
+}
+
+#pixel {
+	background: transparent;
+}
