@@ -1,29 +1,25 @@
 const defaultGridSize = 16;
-const defaultColor = "black";
+const defaultPenColor = "black";
+
+const grid = document.querySelector(".gridContainer");
 
 let gridSize = 16;
-let currentColor = "black";
 
 function defaultGrid() {
 	
-	let grid = document.getElementById("gridContainer");
-	
-	let width = ((1 / gridSize) * 100); 
-	
-	window.alert("width: " + width);
+	const grid = document.querySelector("#gridContainer");
 
-	document.getElementsByClassName("pixel").style.width(width);
+	for (let i = 0; i < gridSize; i++) {
 
-
-	for(let i=1; i<defaultGridSize; i++) {
-		if (i == 1) {grid.innerHTML = grid.innerHTML + "<tr>";}
-		
-		for(let j=1; j<defaultGridSize; j++) {
-			grid.innerHTML = grid.innerHTML + "<td class='pixel'>" + j + "</td>";
+		for (let j = 0; j < gridSize; j++) {
+			const p = document.createElement("div.pixel");
+			p.innerHTML = j + 1;
+			grid.append(p);
+			
+			if (j == gridSize) {
+				grid.write("<br>");
+			}
 		}
-		
-		if (i == defaultGridSize) {grid.innerHTML = grid.innerHTML + "</tr>";}
-
 	}
 }
 
