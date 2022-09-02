@@ -1,3 +1,8 @@
+:root {
+	--grid-rows: 1;
+	--grid-cols: 1;
+}
+
 #outerContainer {
 	display: flex;
 	justify-content: center;
@@ -12,25 +17,13 @@
 }
 
 #gridContainer {
-	display: flex;
-	justify-content: center;
-	height: 400px;
-	width: 400px;
-	border: 2px solid black;
-	border-left: 1px solid black;
+	display: grid;
+	grid-template-rows: repeat(var(--grid-rows), 1fr);
+	grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
-tr {
-	width: 100%;
-	margin: 0 auto;
+.cell {
+	text-align: center;
+	border: 1px solid black;
 }
-
-td {
-	background: blue;
-	width: auto;
-	margin: 0 auto;
-	padding: auto;
-	border: 1px solid green;
-}
-
 

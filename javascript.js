@@ -1,34 +1,43 @@
+// Variables
+
 const defaultGridSize = 16;
 const defaultPenColor = "black";
 
-const grid = document.querySelector(".gridContainer");
+const gridContainer = document.getElementById("gridContainer");
 
 let gridSize = 16;
+let rows = gridSize;
+let cols = gridSize;
+
+// function definitions
 
 function defaultGrid() {
-	
-	const grid = document.querySelector("#gridContainer");
 
-	for (let i = 0; i < gridSize; i++) {
+	gridSize = defaultGridSize;
+	rows = gridSize;
+	cols = gridSize;
+	makeRows(rows, cols);
 
-		for (let j = 0; j < gridSize; j++) {
-			const p = document.createElement("div.pixel");
-			p.innerHTML = j + 1;
-			grid.append(p);
-			
-			if (j == gridSize) {
-				grid.write("<br>");
-			}
-		}
-	}
-}
+};
+
+function makeRows(rows, cols) {
+
+	gridContainer.style.setProperty('--grid-rows', rows);
+	gridContainer.style.setProperty('--grid-cols', cols);
+
+	for (c = 0; c < (rows * cols); c++) {
+		let cell = document.createElement("div");
+		cell.innerText = (c + 1);
+		gridContainer.appendChild(cell).className = "cell";
+	};
+};
 
 defaultGrid();
 
 function updateGrid(gridSize) {
 	
-	// code...
-
+	makeRows(gridSize);
+	makeColumns(gridSize);
 }
 
 function reset() {
